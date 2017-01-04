@@ -1,6 +1,6 @@
 allow system_server storage_stub_file:dir getattr;
-
 add_service(system_server, applock_service);
+
 # Use HALs
 hal_client_domain(system_server, hal_lineage_fastcharge)
 hal_client_domain(system_server, hal_lineage_fod)
@@ -12,4 +12,7 @@ hal_client_domain(system_server, hal_lineage_powershare)
 allow system_server pocket_service:service_manager { add find };
 allow system_server pocket_judge_sysfs:dir search;
 allow system_server pocket_judge_sysfs:file rw_file_perms;
+
 allow system_server pocket_service:service_manager { add find };
+# allow system_server to look into theme resources
+allow system_server theme_data_file:dir search;

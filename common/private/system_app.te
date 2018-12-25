@@ -12,3 +12,5 @@ hal_client_domain(system_app, hal_lineage_touch)
 
 # /data/system access
 allow system_app system_data_file:file r_file_perms;
+
+allow system_app selinuxfs:file r_file_perms;
